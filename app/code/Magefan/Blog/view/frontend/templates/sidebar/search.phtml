@@ -1,0 +1,63 @@
+<?php
+/**
+ * Copyright © 2016 Ihor Vansach (ihor@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog sidebar search form template
+ *
+ * @var $block \Magefan\Blog\Block\Sidebar\Search
+ */
+?>
+<?php
+$objectManager  = \Magento\Framework\App\ObjectManager::getInstance();
+$categoryHelper = $objectManager->get('\Magento\Catalog\Helper\Category');
+$categories     = $categoryHelper->getStoreCategories();
+foreach ($categories as $category):
+	$categoriesStore[] = $category->getId();
+endforeach;
+
+$categoryCollection = $objectManager->get('\Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
+$categories         = $categoryCollection->create()->addAttributeToSelect('*');
+?>
+
+<div class="search-widget-1" data-bind="scope: 'blog-search'">
+    <form class="search-form" id="blog_search_mini_form" action="<?php echo $block->getFormUrl() ?>" method="get">
+        <input id="blog_search" type="text" name="q" value="<?php echo $block->escapeHtml($block->getQuery()) ?>" placeholder="<?php echo __('Search posts ...') ?>" class="input-text" maxlength="128"/>
+        <span class="underline"></span>
+        <button type="submit" onclick="return goBlogSearch(this);" class="input-submit fa fa-search"></button>
+    </form>
+</div>
+<div class="m-t-30">
+	<!-- .product-category-widget-1-->
+	<div class="product-category-widget-1">
+		<div class="heading-widget">
+			<h3><?php echo __('PRODUCT CATEGORY'); ?></h3>
+		</div>
+		<ul class="product-category-list">
+			<?php foreach ($categories as $category):?>
+				<?php if(in_array($category->getId(), $categoriesStore) AND $category->getProductCount() > 0 ):?>
+					<li>
+						<a href="<?php echo $category->getUrl();?>"><?php echo $category->getName(); ?></a>
+						<span class="totals">(<?php echo $category->getProductCount(); ?>)</span>
+					</li>
+				<?php endif;?>
+			<?php endforeach;?>
+		</ul>
+	</div>
+	<!-- end .product-category-widget-1-->
+</div>
+<script type="text/javascript">
+	function goBlogSearch(e)
+	{
+		var value = document.getElementById('blog_search').value;
+		if (value) {
+			window.location = e.form.action + value + '/';
+		}
+		return false;
+	}
+</script>

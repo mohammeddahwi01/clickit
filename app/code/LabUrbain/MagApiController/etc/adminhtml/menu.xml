@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="LabUrbain_MagApiController::customMenu" title="MagAPI Supertek" module="LabUrbain_MagApiController" sortOrder="500" parent="Magento_Backend::system" resource="LabUrbain_MagApiController::customMenu"/>
+        <add id="LabUrbain_MagApiController::downloadCSV" title="Download CSV" module="LabUrbain_MagApiController" sortOrder="100" parent="LabUrbain_MagApiController::customMenu" action="AdminSample/downloadCSV" resource="LabUrbain_MagApiController::downloadCSV"/>
+    </menu>
+</config>

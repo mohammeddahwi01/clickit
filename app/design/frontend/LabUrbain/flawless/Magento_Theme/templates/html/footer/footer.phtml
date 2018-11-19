@@ -1,0 +1,44 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Magento\Theme\Block\Html\Header\Logo $block
+ */
+?>
+<!--[if IE ]>
+  <link href="iecss.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+<div class="footer-container container-1140px">
+    <div class="footer-row-1">
+        <div class="footer-col-1">
+            <div class="footer-title">Flawless</br>by EXCEL CATALOGUES INC.</div>
+            <div class="footer-social-media">
+                <a href="" target="_blank" class="fa fa-google-plus" aria-hidden="true"></a>
+                <a href="" target="_blank" class="fa fa-twitter" aria-hidden="true"></a>
+                <a href="" target="_blank" class="fa fa-facebook" aria-hidden="true"></a>
+                <a href="" target="_blank" class="fa fa-instagram" aria-hidden="true"></a>
+            </div>
+        </div>
+        <div class="footer-col-2">
+            <div class="footer-adresse">5934, Côte-de-Liesse Rd</br>Town of Mount-Royal (Quebec)</br>H4T 2A5 CANADA</div>
+        </div>
+        <div class="footer-col-3">
+            <div class="footer-phone">
+                <div class="footer-phone-title">Phone</div>
+                <div class="footer-phone-number">1-877-788-7787</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-row-2">
+        <div class="footer-copyright">© Legal Notice</div>
+    </div>
+</div>
+
+<?php
+$enable = $helper->getShowsharingaddon();
+$pubid = $helper->getAddthispubid();

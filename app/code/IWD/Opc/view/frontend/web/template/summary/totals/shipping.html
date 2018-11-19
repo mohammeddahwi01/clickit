@@ -1,0 +1,24 @@
+<!-- ko if: quoteIsVirtual == 0 && isCalculated() -->
+<!-- ko if: isBothPricesDisplayed() -->
+<tr>
+    <td  data-bind="text: title + ' ' + excludingTaxMessage"></td>
+    <td  data-bind="text: getExcludingValue()"></td>
+</tr>
+<tr>
+    <td data-bind="text: title + ' ' + includingTaxMessage"></td>
+    <td data-bind="text: getIncludingValue()"></td>
+</tr>
+<!-- /ko -->
+<!-- ko if: isExcludingDisplayed() -->
+<tr>
+    <td  data-bind="i18n: title"></td>
+    <td  data-bind="text: getValue()"></td>
+</tr>
+<!-- /ko -->
+<!-- ko if: isIncludingDisplayed() -->
+<tr>
+    <td data-bind="i18n: title"></td>
+    <td data-bind="text: getIncludingValue()"></td>
+</tr>
+<!-- /ko -->
+<!-- /ko -->

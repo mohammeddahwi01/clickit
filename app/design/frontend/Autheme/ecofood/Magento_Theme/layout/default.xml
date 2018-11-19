@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                <argument name="logo_img_width" xsi:type="string">auto</argument>
+                <argument name="logo_img_height" xsi:type="string">auto</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock name="top.links">
+            <arguments>
+                <argument name="template" xsi:type="string">Magento_Theme::html/account_links.phtml</argument>
+            </arguments>
+            <referenceBlock name="wish-list-link" remove="true" />
+            <referenceBlock name="my-account-link" remove="true" />
+            <referenceBlock name="catalog.compare.link" remove="true" />
+        </referenceBlock>
+
+        <referenceContainer name="header.container">
+            <block class="Magento\Framework\View\Element\Template" name="eco_header" template="Magento_Theme::html/eco_header.phtml"  before="-">
+                <!-- TOP LINKS: settings and navigation -->
+                <block class="Magento\Framework\View\Element\Template" name="setting_links" as="setting_links" template="Magento_Theme::html/setting.phtml" />
+                <!-- END TOP LINKS: settings and navigation -->
+            </block>
+            <!-- <remove element="catalog.topnav"> -->
+        </referenceContainer>
+
+        <!-- <referenceBlock name="catalog.topnav"  remove="true"/> -->
+
+        <move element="skip_to_content" as="skipToContent" destination="eco_header"/>
+       
+        <move element="minicart" destination="eco_header"/>
+        <move element="top.search" destination="eco_header"/>
+        <move element="logo" as="logo" destination="eco_header"/>
+        <move element="top.links" as="toplinks" destination="eco_header"/>
+        <referenceBlock name="advanced-search-link" remove="true"/>
+
+
+        <referenceContainer name="footer-container">
+            <container name="footer-top" label="Footer Top" htmlTag="div"  htmlClass="m-b-90" before="-">
+                <block class="Magento\Cms\Block\Block" name="eco-footer-2">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">eco-footer-2</argument>
+                    </arguments>
+                </block>
+            </container>
+
+            <container name="footer" as="footer" label="Page Footer" htmlTag="div" htmlClass="container">
+                <remove name="form.subscribe"/>
+                <block class="Magento\Theme\Block\Html\Footer" name="copyright" template="html/copyright.phtml"/>
+                <block class="Magento\Framework\View\Element\Template" name="report.bugs" template="Magento_Theme::html/bugreport.phtml" />
+            </container>
+
+        </referenceContainer>
+
+        <referenceContainer name="header.panel.wrapper" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <move element="copyright" destination="footer"/> 
+    </body>
+</page>

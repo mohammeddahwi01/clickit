@@ -1,0 +1,40 @@
+<?php
+$om = \Magento\Framework\App\ObjectManager::getInstance();
+$productHelper = $om->get('\Magento\Catalog\Model\Product');
+$listBlock = $om->get('\Magento\Catalog\Block\Product\ListProduct');
+
+//echo $block->getData('id_path');
+$productid = explode("/", $block->getData('id_path'));
+$productid = $productid[1];
+
+//button class
+if ($block->getData('widgetbuttonclass')) {
+	$buttonClass = "order-button" . $block->getData('widgetbuttonclass');
+}else{
+	$buttonClass = "order-button";
+}
+?>
+    <a href="#" class="<?php echo $buttonClass; ?>">
+			<?php if ($block->getData('widgetabovebutton')): ?>
+        <div class="<?php echo $buttonClass ?>-text"><?php echo $block->getData('widgetabovebutton'); ?></div>
+			<?php endif ?>
+				<form data-role="tocart-form" action="<?php echo $listBlock->getAddToCartUrl($productHelper->load($productid));
+				?>" method="post">      
+				<?php echo $block->getBlockHtml('formkey'); ?>
+				        <button style="margin:0 auto;" class="action tocart primary order-button"
+				    type="submit" title="<?php /* @escapeNotVerified */ echo $block->getData('widgettitle') ?>">
+				        <span><?php /* @escapeNotVerified */ echo $block->getData('widgettitle') ?></span>
+				    </button>
+				</form>
+    </a>
+		<?php if ($block->getData('widgetcss') != ""): ?>
+			<style>
+				.<?php echo $buttonClass; ?> button.action.primary {
+					<?php echo $block->getData('widgetcss'); ?>
+				}
+			</style>
+		<?php endif ?>
+		
+		
+		
+		

@@ -1,0 +1,97 @@
+  <div class="header-container-row-1-fond">
+      <div class="header-container header-container-row-1">
+          <div class="header-rewards">
+              <div class="header-rewards-img"><img src="<?php echo $block->getViewFileUrl('images/icon-reward.png') ?>" class="img-responsive" /></div>
+              <div class="header-rewards-text">Altramed Rewards program<a href="<?php echo $block->getBaseUrl(); ?>altramed-rewards-program">JOIN NOW!</a></div>
+          </div>
+          <div class="header-row-1-right">
+              <ul class="header-languages">
+                  <li><a class="active" href="#">EN</a></li>
+                  <li><a href="#">FR</a></li>
+                  <li><a href="#">ES</a></li>
+                  <li><a href="#">IT</a></li>
+              </ul>
+              <!-- <div class="header-research">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  <form class="header-research-complete">
+                      <input type="text" class="research-input" placeholder="Shop for products, brands or categories...">
+                      <button type="submit" class="fa fa-search research-btn" aria-hidden="true"></button>
+                  </form>
+              </div> -->
+              <!-- <div class="header-tools">
+                  <a href=""><img src="<?php echo $block->getViewFileUrl('images/icon-outils.png') ?>" class="img-responsive" /></a>
+              </div> -->
+              <div class="header-registrer"><a href="<?php echo $block->getUrl('customer/account', ['_secure' => true]);?>">SIGN IN / REGISTER</a></div>
+							<?php echo $this->getChildHtml('minicart') ?>
+              <a href="<?php echo $block->getUrl('checkout', ['_secure' => true]);?>" class="header-button-checkout">CHECKOUT</a>
+          </div>
+      </div>
+  </div>
+  <div class="fond-header-container-row-2">
+      <div class="header-container header-container-row-2">
+          <div class="header-order-title">
+              <div class="header-order-icon"><img src="<?php echo $block->getViewFileUrl('images/call-answer.png') ?>" class="img-responsive" /></div>
+              <div class="header-order-text">CALL US NOW</div>
+          </div>
+          <div class="header-order-sep"></div>
+          <div class="header-order-country">
+              <div class="header-country-icon"><img src="<?php echo $block->getViewFileUrl('images/drapeau-international.png') ?>" class="img-responsive" /></div>
+              <div class="header-country-text">
+                  <div class="header-country-title">ALL OTHER COUNTRIES </div>
+                  <div class="header-country-phone">1 (514) 695-2299</div>
+              </div>
+          </div>
+          <div class="header-order-sep"></div>
+          <div class="header-order-country">
+              <div class="header-country-icon"><img src="<?php echo $block->getViewFileUrl('images/drapeau-australie.png') ?>" class="img-responsive" /></div>
+              <div class="header-country-text">
+                  <div class="header-country-title">Australia</div>
+                  <div class="header-country-phone">(61) 281034902</div>
+              </div>
+          </div>
+          <div class="header-order-sep"></div>
+          <div class="header-order-country">
+              <div class="header-country-icon"><img src="<?php echo $block->getViewFileUrl('images/drapeau-italie.png') ?>" class="img-responsive" /></div>
+              <div class="header-country-text">
+                  <div class="header-country-title">Italy</div>
+                  <div class="header-country-phone">(39) 0694805856</div>
+              </div>
+          </div>
+          <div class="header-order-sep"></div>
+          <div class="header-order-country">
+              <div class="header-country-icon">
+                  <img src="<?php echo $block->getViewFileUrl('images/drapeau-canada.png') ?>" class="img-responsive" />
+              </div>
+              <div class="header-country-text">
+                  <div class="header-country-title">CANADA</div>
+                  <div class="header-country-phone">1-888-900-2299<span style="font-size:10px; display:block">TOLL FREE</span></div>
+              </div>
+          </div>
+          <div class="header-order-sep"></div>
+          <div class="header-order-country">
+              <div class="header-country-icon">
+                  <img src="<?php echo $block->getViewFileUrl('images/drapeau-us.png') ?>" class="img-responsive" />
+              </div>
+              <div class="header-country-text">
+                  <div class="header-country-title">UNITED STATES</div>
+                  <div class="header-country-phone">1-888-900-2299<span style="font-size:10px; display:block">TOLL FREE</span></div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="fond-header-container-row-3">
+      <div class="header-container header-container-row-3">
+          <div class="header-logo"><a href="<?php echo $block->getBaseUrl(); ?>"><img src="<?php echo $block->getViewFileUrl('images/logo-essiac-ca-left.png') ?>" alt="Logo Essiac" /></a></div>
+          <a href="<?php echo $block->getBaseUrl(); ?>" class="header-buy-now"><i class="fa fa-angle-right" aria-hidden="true"></i>SHOP HERE</a>
+          <div class="header-mailing-list">
+              <div class="header-mailing-list-title">
+                  <div class="header-mailing-list-text"><i class="fa fa-envelope" aria-hidden="true"></i> Join our mailing list</div>
+              </div>
+              <form class="header-mailing-form">
+                  <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                  <input type="email" class="mailing-input" id="exampleInputEmail3" placeholder="Your email address here">
+                  <button type="submit" class="suscribe-btn">SUSCRIBE</button>
+              </form>
+          </div>
+      </div>
+  </div>

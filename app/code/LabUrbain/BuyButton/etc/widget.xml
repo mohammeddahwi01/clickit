@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+            <widget class="LabUrbain\BuyButton\Block\Widget\BuyButton" id="LabUrbain_buybutton">
+                        <label>LabUrbain BuyButton Widget</label>
+                        <description></description>
+                        <parameters>
+                                    <parameter name="widgettitle" sort_order="10" visible="true" xsi:type="text">
+                                                <label>Title</label>
+                                    </parameter>
+                                    <parameter name="widgetabovebutton" sort_order="10" visible="true" xsi:type="text">
+                                                <label>Text Above Button</label>
+                                    </parameter>
+												            <parameter name="id_path" xsi:type="block" visible="true" required="true" sort_order="10">
+												                <label translate="true">Product</label>
+												                <block class="Magento\Catalog\Block\Adminhtml\Product\Widget\Chooser">
+												                    <data>
+												                        <item name="button" xsi:type="array">
+												                            <item name="open" xsi:type="string" translate="true">Select Product...</item>
+												                        </item>
+												                    </data>
+												                </block>
+												            </parameter>
+                                    <parameter name="widgetbuttonclass" sort_order="10" visible="true" xsi:type="text">
+                                                <label>Button Class</label>
+																	              <description translate="true"></description>
+                                    </parameter>
+                                    <parameter name="widgetcss" sort_order="10" visible="true" xsi:type="text">
+                                                <label>Custom CSS</label>
+																	              <description translate="true"></description>
+                                    </parameter>
+                        </parameters>
+            </widget>
+</widgets>

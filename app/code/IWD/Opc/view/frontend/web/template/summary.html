@@ -1,0 +1,35 @@
+<div
+        data-bind="
+        iwdBlockLoader: isLoading
+        "
+        id="iwd_opc_review"
+        class="iwd_opc_column">
+    <div
+            data-bind="hasFocus: reviewFocus"
+            tabindex="-1"
+            class="iwd_opc_alternative_column checkout-order m-t-30">
+        <h4 class="checkout-heading">Your order</h4>
+        <table class="table table-bordered order-table">
+            <thead>
+            <tr>
+                <th>PRODUCT</th>
+                <th>TOTAL</th>
+            </tr>
+            </thead>
+            <tbody>
+                <!-- ko foreach: getRegion('itemsBefore') -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+                <!-- ko foreach: getRegion('cart_items') -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+                <!-- ko foreach: getRegion('itemsAfter') -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+                <!-- ko foreach: getRegion('totals') -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+                <!--/ko-->
+            </tbody>
+        </table>
+    </div>
+</div>

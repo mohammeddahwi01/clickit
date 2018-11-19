@@ -1,0 +1,58 @@
+<?php
+	$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+	$request = $objectManager->get('Magento\Framework\App\Action\Context')->getRequest();
+?>
+<div class="page-loader">
+	<div class="loader"></div>
+</div>
+<div class="section <?php if($request->getFullActionName() == 'cms_index_index'):?>
+   <?php if ($block->getLayout()->getBlock('page.main.title')->getPageTitle() == 'Home Page'):?>
+	white-background border-bottom-grey
+	<?php else: ?>dark-background <?php endif;?>
+	<?php else:?> dark-background <?php endif;?>">
+	<div class="container">
+		<?php if($request->getFullActionName() == 'cms_index_index'): ?>
+			<?php if ($block->getLayout()->getBlock('page.main.title')->getPageTitle() == 'Home Page'):?>
+				<div id="ecofood-header" class="header-1">
+					<div class="search">
+						<?php echo $this->getChildHtml("topSearch"); ?>
+					</div>
+					<?php echo $this->getChildHtml("logo"); ?>
+					<?php echo $this->getChildHtml('minicart'); ?>
+				</div>
+			<?php else: ?>
+				<div class="header-2">
+					<?php  echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-address-header')->toHtml(); ?>
+					<div class="header-right">
+						<?php echo $this->getChildHtml('toplinks'); ?>
+						<span class="divider">|</span>
+						<div class="header-search">
+							<button class="fa fa-search"></button>
+							<div class="search-box">
+								<?php echo $this->getChildHtml("topSearch"); ?>
+							</div>
+						</div>
+					</div>
+					<?php echo $this->getChildHtml('minicart'); ?>
+				</div>
+			<?php endif; ?>
+	    <?php else: ?>
+			<div class="header-2">
+				<?php  echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-address-header')->toHtml(); ?>
+				<div class="header-right">
+					<?php echo $this->getChildHtml('toplinks'); ?>
+					<span class="divider">|</span>
+					<div class="header-search">
+						<button class="fa fa-search"></button>
+						<div class="search-box">
+							<?php echo $this->getChildHtml("topSearch"); ?>
+						</div>
+					</div>
+				</div>
+				<?php echo $this->getChildHtml('minicart'); ?>
+			</div>
+		<?php endif;?>
+	</div>
+</div>
+
+

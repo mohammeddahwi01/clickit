@@ -1,0 +1,22 @@
+<!-- ko if: isBothPricesDisplayed() -->
+<tr>
+        <td data-bind="i18n: title + ' ' + excludingTaxMessage"></td>
+        <td data-bind="text: getValue()"></td>
+</tr>
+<tr >
+        <td  data-bind="i18n: title + ' ' + includingTaxMessage"></td>
+        <td  data-bind="text: getValueInclTax()"></td>
+</tr>
+<!-- /ko -->
+<!-- ko if: !isBothPricesDisplayed() && !isIncludingTaxDisplayed() -->
+<tr >
+    <td data-bind="i18n: title" class="iwd_opc_review_total_cell"></td>
+    <td data-bind="text: getValue()"></td>
+</tr>
+<!-- /ko -->
+<!-- ko if: !isBothPricesDisplayed() && isIncludingTaxDisplayed() -->
+<tr>
+    <td data-bind="i18n: title" class="iwd_opc_review_total_cell"></td>
+    <td data-bind="text: getValueInclTax()"></td>
+</tr>
+<!-- /ko -->

@@ -1,0 +1,76 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $request       = $objectManager->get('Magento\Framework\App\Action\Context')->getRequest();
+    $currentUrl    = $block->getUrl('*/*/*', ['_current' => true, '_use_rewrite' => true]);
+
+    if($request->getFullActionName() == 'catalog_category_view') {
+        echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-banner-categories')->toHtml();
+    }
+    if($request->getFullActionName() == 'onepage_index_index') {
+        echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-banner-checkout')->toHtml();
+    }
+
+    if($request->getFullActionName() == 'catalog_product_view') {
+        echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-banner-product-detail')->toHtml();
+    }
+
+    if($request->getFullActionName() == 'checkout_cart_index') {
+        echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-banner-shopping-cart')->toHtml();
+    }
+
+    if (strpos($currentUrl, 'about') > 0) {
+        echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-banner-about')->toHtml();
+    }
+
+    if (strpos($currentUrl, 'faq') > 0) {
+        echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-banner-faq')->toHtml();
+    }
+
+    if (strpos($currentUrl, 'contact') > 0) {
+        echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-banner-contact-us')->toHtml();
+    }
+
+    if (strpos($currentUrl, 'account') > 0) {
+        echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-banner-account')->toHtml();
+    }
+
+    if (strpos($currentUrl, 'wishlist') > 0) {
+        echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-banner-wishlist')->toHtml();
+    }
+
+    if (strpos($currentUrl, 'blog') > 0) {
+        echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-banner-blog')->toHtml();
+    }
+?>
+<?php if ($crumbs && is_array($crumbs)) : ?>
+    <div class="section border-bottom-grey">
+        <div class="container">
+            <div class="breadcrumb-1">
+                <ul class="items">
+                    <?php foreach ($crumbs as $crumbName => $crumbInfo) : ?>
+                        <li class="item <?php /* @escapeNotVerified */ echo $crumbName ?>">
+                        <?php if ($crumbInfo['link']) : ?>
+                            <a href="<?php /* @escapeNotVerified */ echo $crumbInfo['link'] ?>" title="<?php echo $block->escapeHtml($crumbInfo['title']) ?>">
+                                <?php echo $block->escapeHtml($crumbInfo['label']) ?>
+                            </a>
+                        <?php elseif ($crumbInfo['last']) : ?>
+                            <strong><?php echo $block->escapeHtml($crumbInfo['label']) ?></strong>
+                        <?php else: ?>
+                            <?php echo $block->escapeHtml($crumbInfo['label']) ?>
+                        <?php endif; ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

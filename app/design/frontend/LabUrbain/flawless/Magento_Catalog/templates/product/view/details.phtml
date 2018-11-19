@@ -1,0 +1,260 @@
+<!-- <div class="page-product-note">PLEASE NOTE THAT PRODUCTS SOLD ON THIS SITE ARE DIETARY SUPPLEMENTS</div> -->
+<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('product_note')->toHtml();?>
+
+
+<?php 
+		$_product = $block->getProduct();
+
+		$tierPricesList = $_product->getPriceInfo()->getPrice('tier_price')->getTierPriceList();
+		$finalprice = $_product->getFinalPrice();
+?>
+
+
+<div class="page-product-container">
+    <div class="page-product-content">
+        <div class="page-product-content-col-img">
+            <!-- <div class="page-product-main-img"></div> -->
+			<?= $block->getChildHtml('product.info.media.image') ?>
+            <!-- <div class="page-product-sec-img"><img src="<?php echo $block->getViewFileUrl('images/products/produit-essiac-herbal-capsules-formula.png') ?>" class="img-responsive" /></div> -->
+        </div>
+        <div class="page-product-content-col-infos">
+			<?php 
+				$productName = $_product->getName();
+				$productName = explode(",", $productName);
+			 ?>
+			
+            <div class="page-product-title"><?php echo $productName[0]; ?></div>
+            <div class="page-product-sous-title-price"><?php echo @$productName[1]; ?><span class="price hidden">$<?php echo $finalprice; ?></span></div>
+			<?php
+				$_helper = $this->helper('Magento\Catalog\Helper\Output');
+			?>
+
+			<?= /* @escapeNotVerified */ $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+            
+
+
+			
+            <div class="page-product-order-container">
+                <div class="page-product-order-title">ORDER ONLINE</div>
+                <div class="page-product-order-row-quantity-price-button">
+                    <div class="page-product-order-quantity-price">
+                        <div class="page-product-order-quantity">
+                            <div class="page-product-order-quantity-title">Quantity</div>
+                            <select class="page-product-order-quantity-select" data-target=".page-product-order-price">
+                                <option value="0" data-show=".nobox">Quantity - Vegetable capsules Bottles</option>
+                                <option value="1" data-show=".1box">1 Bottle $<?php echo $finalprice ?></option>
+								
+								<?php foreach ($tierPricesList as $key => $value): ?>
+	                                <option value="<?php echo $value["price_qty"] ?>" data-show=".<?php echo $value["price_qty"] ?>boxes"><?php echo $value["price_qty"] ?> Bottles $<?php echo number_format($value["website_price"]*$value["price_qty"], 2, '.', ''); ?> ($<?php echo number_format($value["website_price"], 2, '.', ''); ?> each)</option>
+								<?php endforeach ?>
+                                <!-- <option value="2" data-show=".2boxes">2 Bottles $89.90 ($44.95 each)</option>
+                                <option value="3" data-show=".3boxes">3 Bottles $107.85 ($35.95 each)</option>
+                                <option value="6" data-show=".6boxes">6 Bottles $209.70 ($34.95 each)</option>
+                                <option value="8" data-show=".8boxes">8 Bottles $271.60 ($33.95 each)</option>
+                                <option value="10" data-show=".10boxes">10 Bottles $329.50 ($32.95 each)</option>
+                                <option value="12" data-show=".12boxes">12 Bottles $383.40 ($31.95 each)</option>
+                                <option value="14" data-show=".14boxes">14 Bottles $447.30 ($31.95 each)</option>
+                                <option value="15" data-show=".15boxes">15 Bottles $476.25 ($31.75 each)</option>
+                                <option value="24" data-show=".24boxes">24 Bottles $756.00 ($31.50 each)</option>
+                                <option value="36" data-show=".36boxes">36 Bottles $1080.00 ($30.00 each)</option> -->
+                                
+                            </select>
+                        </div>
+                        <div class="page-product-order-price">
+                            <div class="nobox hide"></div>
+                            <div class="1box hide">$<?php echo $finalprice ?></div>
+							
+							<?php foreach ($tierPricesList as $key => $value): ?>
+                                <div class="<?php echo $value["price_qty"] ?>boxes hide">$<?php echo number_format($value["website_price"]*$value["price_qty"], 2, '.', ''); ?></div>
+							<?php endforeach ?>
+							
+                            <!-- <div class="2boxes hide">$89.90</div>
+                            <div class="3boxes hide">$107.85</div>
+                            <div class="6boxes hide">$209.70</div>
+                            <div class="8boxes hide">$271.60</div>
+                            <div class="10boxes hide">$329.50</div>
+                            <div class="12boxes hide">$383.40</div>
+                            <div class="14boxes hide">$447.30</div>
+                            <div class="15boxes hide">$476.25</div>
+                            <div class="24boxes hide">$756.00</div>
+                            <div class="36boxes hide">$1080.00</div> -->
+                        </div>
+                    </div>
+                    <!-- <a href="" class="page-product-order-button"><i class="fa fa-cart-plus" aria-hidden="true"></i> ADD TO CART</a> -->
+					<?= $block->getChildHtml('product.info') ?>
+					
+					<script type="text/javascript">
+				        jQuery(document).on('change', '.page-product-order-quantity-select', function() {
+				          var target = jQuery(this).data('target');
+						  var qty = jQuery(this).val();
+				          var show = jQuery("option:selected", this).data('show');
+						  jQuery("#qty").val(qty);
+				          jQuery(target).children().addClass('hide');
+				          jQuery(show).removeClass('hide');
+				        });
+				        jQuery(document).ready(function(){
+				            jQuery('.page-product-order-quantity-select').trigger('change');
+				        });
+						
+					</script>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <section class="section-call-us-or-order-by-container">
+    <div class="section-call-us-or-order-by-col">
+        <div class="section-call-us-or-order-by-title">CALL US TO ORDER <span class="weight-700">BY PHONE</span></div>
+        <div class="section-call-us-or-order-by-text"><div>TOLL FREE USA/Canada<br><span class="phone-text">1-888-900-2299</span></div><div class="hidden">International <span class="phone-text">1 (514) 695-2299</span></div></div>
+        <div class="section-call-us-or-order-by-horaires">- EST between 8 a.m. and 8 p.m. -</div>
+    </div>
+    <div class="section-call-us-or-order-by-col">
+        <div class="section-call-us-or-order-by-title">OR ORDER <span class="weight-700">BY</span></div>
+        <div class="section-call-us-or-order-by-text no-border">Mail <span class="sep">|</span> Check <span class="sep">|</span> Fax <span class="sep">|</span> C.O.D.<br>Certified Money Orders</div>
+        <div class="section-call-us-or-order-by-button"><a href="<?php echo $block->getBaseUrl(); ?>order-page">More details</a></div>
+    </div>
+</section>
+
+
+    <div class="page-product-description">
+		
+		<?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')):?>
+			<?php $detailsblock = $detailedInfoGroup[0]; ?>
+		        <?php $layout = $block->getLayout(); ?>
+
+		                <?php
+		                    $html = $layout->renderElement($detailsblock);
+		                    $alias = $layout->getElementAlias($detailsblock);
+		                    $label = $block->getChildData($alias, 'title');
+		                ?>
+		                    <?= /* @escapeNotVerified */ $html ?>
+		<?php endif; ?>
+        <!-- <div class="page-product-description-col-text">
+            <h3>SUGGESTED USE:</h3>
+            <p>For adults, take 2-4 Capsules twice daily, preferably one hour before of after meals. As a reminder, discuss the supplements and medications you take with your health care providers. The bottle will last 1-2 weeks if taken as suggested.</p>
+            <h3>OTHER INGREDIENTS:</h3>
+            <p>Magnesium sterate. No other ingredients</p>
+            <h3>WARNING:</h3>
+            <p>Not to be taken during pregnancy, by nursing mothers or by children under 10 years of age. KEEP OUT OF REACH OF CHILDREN. STORE IN A DRY PLACE AND AVOID EXCESSIVE HEAT. TAMPER RESISTANT; DO NOT USE IF SEAL UNDER CAP IS BROKEN OR MISSING.</p>
+        </div>
+        <div class="page-product-description-col-img">
+            <div class="page-product-label"><img src="<?php echo $block->getViewFileUrl('images/label-img.jpg') ?>" class="img-responsive" /></div>
+            <p class="grey-small">*This statement has not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease</p>
+        </div> -->
+		
+    </div>
+    <div class="authenticity-chart-container" style="margin-top:30px;">
+        <div class="authenticity-chart-title">Authentic ESSIAC® or a Counterfeit?</div>
+        <div class="authenticity-chart-content">
+            <div class="authenticity-chart-row-title">
+                <div class="authenticity-chart-col-title">Authentic ESSIAC®</div>
+                <div class="authenticity-chart-col-title text-right">Counterfeit ESSIAC</div>
+            </div>
+            <div class="authenticity-chart-row">
+                <div class="authenticity-chart-col-text">Label must contain the registered trademark</div>
+                <div class="authenticity-chart-col-img"><img src="<?php echo $block->getViewFileUrl('images/registered-trademark.png') ?>" class="img-responsive" /></div>
+                <div class="authenticity-chart-col-text text-right">Label does not contain the<br>registered trademark</div>
+            </div>
+            <div class="authenticity-chart-row">
+                <div class="authenticity-chart-col-text">Label must show the Canadian flag</div>
+                <div class="authenticity-chart-col-img"><img src="<?php echo $block->getViewFileUrl('images/drapeau-canada.png') ?>" class="img-responsive" /></div>
+                <div class="authenticity-chart-col-text text-right">Label does not show the Canadian flag</div>
+            </div>
+            <div class="authenticity-chart-row">
+                <div class="authenticity-chart-col-text">ESSIAC is spelled "ESSIAC"</div>
+                <div class="authenticity-chart-col-img"></div>
+                <div class="authenticity-chart-col-text text-right">Spelled as ESSIAK", "ESIAK", "ESSAIC" or other</div>
+            </div>
+            <div class="authenticity-chart-row">
+                <div class="authenticity-chart-col-text">Label must show Rene Caisse's authorized picture on front of the product</div>
+                <div class="authenticity-chart-col-img"><img src="<?php echo $block->getViewFileUrl('images/rene.png') ?>" class="img-responsive" /></div>
+                <div class="authenticity-chart-col-text text-right">Label does not show<br>Rene Caisse's picture</div>
+            </div>
+            <div class="authenticity-chart-row">
+                <div class="authenticity-chart-col-text">Label must show Rene Caisse's authorized signature</div>
+                <div class="authenticity-chart-col-img"></div>
+                <div class="authenticity-chart-col-text text-right">Label does not show<br>Rene Caisse's signature</div>
+            </div>
+            <div class="authenticity-chart-row">
+                <div class="authenticity-chart-col-text">Contains 4 herbs</div>
+                <div class="authenticity-chart-col-img"></div>
+                <div class="authenticity-chart-col-text text-right">Contains 6 or 8 herbs</div>
+            </div>
+            <div class="authenticity-chart-row">
+                <div class="authenticity-chart-col-text">Contains Sheep Sorrel Leaves</div>
+                <div class="authenticity-chart-col-img"></div>
+                <div class="authenticity-chart-col-text text-right">Contains Sheep Sorrel Root</div>
+            </div>
+            <div class="authenticity-chart-row">
+                <div class="authenticity-chart-col-text">Contains Indian Rhubarb Root</div>
+                <div class="authenticity-chart-col-img"></div>
+                <div class="authenticity-chart-col-text text-right">Contains Turkey Rhubarb</div>
+            </div>
+            <div class="authenticity-chart-row">
+                <div class="authenticity-chart-col-text">Sold in bottles and boxes</div>
+                <div class="authenticity-chart-col-img"></div>
+                <div class="authenticity-chart-col-text text-right">Sold in plastic bags or stand-up pouches</div>
+            </div>
+            <div class="authenticity-chart-row">
+                <div class="authenticity-chart-col-text">Label indicates ingredients, expiry date and lot number</div>
+                <div class="authenticity-chart-col-img"></div>
+                <div class="authenticity-chart-col-text text-right">Label does not indicate ingredients, expiry date or lot number</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page-product-module-other-products">
+        <div class="page-product-module-other-products-title">other ESSIAC <span class="weight-400">PRODUCTS</span></div>
+        <!-- Diaporama other produit essiac -->
+        <div class="module-list-products-essiac-slider">
+            <div class="slider-products-item swiper-slide">
+                <a href="#" class="slider-products-img"><img src="<?php echo $block->getViewFileUrl('images/products/produit-essiac-1.png') ?>"></a>
+                <div class="slider-products-icons">
+                    <a class="products-icon icon-natural"><img src="<?php echo $block->getViewFileUrl('images/icon-naturel.png') ?>" alt="Naturel"><div class="products-icon-text">Naturel</div></a>
+                    <a class="products-icon icon-vegan active"><img src="<?php echo $block->getViewFileUrl('images/icon-vegan.png') ?>" alt="Vegan"><div class="products-icon-text">Vegan</div></a>
+                    <a class="products-icon icon-gluten-free active"><img src="<?php echo $block->getViewFileUrl('images/icon-gluten-free.png') ?>" alt="Gluten Free"><div class="products-icon-text">Gluten Free</div></a>
+                    <a class="products-icon icon-canadian active"><img src="<?php echo $block->getViewFileUrl('images/icon-feuille-erable.png') ?>" alt="Canadian"><div class="products-icon-text">Canadian</div></a>
+                </div>
+                <div class="slider-products-title-and-info">
+                    <div class="slider-products-title">ESSIAC <span class="weight-400">HERBAL POWDER</span></div>
+                    <div class="slider-products-info">IMMUNE SYSTEM SUPPORT*</div>
+                </div>
+                <div class="slider-products-format">Net Wt. 1.5 oz (42.5g)</div>
+                <a href="<?php echo $block->getBaseUrl(); ?>essiac-powder" class="slider-products-buy">Buy now</a>
+            </div>
+            <div class="slider-products-item swiper-slide">
+			
+                <a href="#" class="slider-products-img"><img src="<?php echo $block->getViewFileUrl('images/products/produit-essiac-2.png') ?>"></a>
+                <div class="slider-products-icons">
+                    <a class="products-icon icon-natural"><img src="<?php echo $block->getViewFileUrl('images/icon-naturel.png') ?>" alt="Naturel"><div class="products-icon-text">Naturel</div></a>
+                    <a class="products-icon icon-vegan active"><img src="<?php echo $block->getViewFileUrl('images/icon-vegan.png') ?>" alt="Vegan"><div class="products-icon-text">Vegan</div></a>
+                    <a class="products-icon icon-gluten-free active"><img src="<?php echo $block->getViewFileUrl('images/icon-gluten-free.png') ?>" alt="Gluten Free"><div class="products-icon-text">Gluten Free</div></a>
+                    <a class="products-icon icon-canadian active"><img src="<?php echo $block->getViewFileUrl('images/icon-feuille-erable.png') ?>" alt="Canadian"><div class="products-icon-text">Canadian</div></a>
+                </div>
+                <div class="slider-products-title-and-info">
+                    <div class="slider-products-title">ESSIAC <span class="weight-400">HERBAL EXTRACT</span></div>
+                    <div class="slider-products-info">IMMUNE SYSTEM SUPPORT*</div>
+                </div>
+                <div class="slider-products-format">10.14fl oz (300ml)</div>
+                <a href="<?php echo $block->getBaseUrl(); ?>essiac-liquid-extract" class="slider-products-buy">Buy now</a>
+                
+            </div>
+            <div class="slider-products-item swiper-slide">
+            
+                <a href="#" class="slider-products-img"><img src="<?php echo $block->getViewFileUrl('images/products/produit-essiac-3.png') ?>"></a>
+                <div class="slider-products-icons">
+                    <a class="products-icon icon-natural"><img src="<?php echo $block->getViewFileUrl('images/icon-naturel.png') ?>" alt="Naturel"><div class="products-icon-text">Naturel</div></a>
+                    <a class="products-icon icon-vegan active"><img src="<?php echo $block->getViewFileUrl('images/icon-vegan.png') ?>" alt="Vegan"><div class="products-icon-text">Vegan</div></a>
+                    <a class="products-icon icon-gluten-free active"><img src="<?php echo $block->getViewFileUrl('images/icon-gluten-free.png') ?>" alt="Gluten Free"><div class="products-icon-text">Gluten Free</div></a>
+                    <a class="products-icon icon-canadian active"><img src="<?php echo $block->getViewFileUrl('images/icon-feuille-erable.png') ?>" alt="Canadian"><div class="products-icon-text">Canadian</div></a>
+                </div>
+                <div class="slider-products-title-and-info">
+                    <div class="slider-products-title">ESSIAC <span class="weight-400">VEGETABLE CAPSULES</span></div>
+                    <div class="slider-products-info">IMMUNE SYSTEM SUPPORT*</div>
+                </div>
+                <div class="slider-products-format">60 capsules / 500mg</div>
+                <a href="<?php echo $block->getBaseUrl(); ?>essiac-herbal-capsules" class="slider-products-buy">Buy now</a>
+            </div>
+        </div>
+    </div>
+</div>

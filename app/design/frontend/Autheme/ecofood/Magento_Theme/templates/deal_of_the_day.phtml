@@ -1,0 +1,50 @@
+<?php
+    $productId = $this->getData('product_id');
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $product = $objectManager->create('Magento\Catalog\Model\Product')->load($productId);
+    $abstractProductBlock = $block->getLayout()->createBlock('\Magento\Catalog\Block\Product\AbstractProduct');
+?>
+<div class="section primary-color-background">
+    <div class="container">
+        <!-- .deal-of-the-day-1-->
+        <div class="deal-of-the-day-1">
+            <div class="heading-section-deal-of-the-day">
+                <h3><?php echo __('Deal of the day');?></h3>
+            </div>
+            <?php echo $this->helper('Magento\Catalog\Helper\Output')->productAttribute($product, $product->getDescription(), 'description') ?>
+            <div class="product-deal-of-the-day">
+                <img src="<?php echo $abstractProductBlock->getUrl('pub/media/catalog').'product'.$product->getImage();?>" alt="Deal of the day" />
+            </div>
+            <div class="action-deal-of-the-day">
+                <div class="action-content">
+                    <p class="price"><?php echo __('Price:').$abstractProductBlock->getProductPrice($product); ?></p>
+                    <?php if ($product->isSaleable()): ?>
+                        <?php if ($product->getTypeInstance()->hasRequiredOptions($product)): ?>
+                            <a class="btn-add-to-cart au-btn au-btn-radius au-btn-primary" href="#"
+                               data-mage-init='{"redirectUrl":{"url":"<?php /* @escapeNotVerified */ echo $abstractProductBlock->getAddToCartUrl($product) ?>"}}'
+                               title="<?php /* @escapeNotVerified */ echo __('Add to Cart') ?>"><?php /* @escapeNotVerified */ echo __('Add to Cart') ?>
+                            </a>
+                        <?php else: ?>
+                            <?php
+                            $postDataHelper = $this->helper('Magento\Framework\Data\Helper\PostHelper');
+                            $postData = $postDataHelper->getPostData($abstractProductBlock->getAddToCartUrl($product), ['product' => $product->getEntityId()])
+                            ?>
+                            <a class="btn-add-to-cart au-btn au-btn-radius au-btn-primary" href="#"
+                               data-post='<?php /* @escapeNotVerified */ echo $postData; ?>'
+                               title="<?php /* @escapeNotVerified */ echo __('Add to Cart') ?>">
+                                <?php /* @escapeNotVerified */ echo __('Add to Cart') ?>
+                            </a>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <?php if ($product->getIsSalable()): ?>
+                            <div class="stock available"><span><?php /* @escapeNotVerified */ echo __('In stock') ?></span></div>
+                        <?php else: ?>
+                            <div class="stock unavailable"><span><?php /* @escapeNotVerified */ echo __('Out of stock') ?></span></div>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+        <!-- end .deal-of-the-day-1-->
+    </div>
+</div>

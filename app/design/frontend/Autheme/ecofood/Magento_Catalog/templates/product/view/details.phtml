@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')):?>
+    <div class="product info detailed">
+        <?php $layout = $block->getLayout(); ?>
+        <div class="product-detail-accordion-1">
+            <div data-accordion-group="data-accordion-group">
+            <?php foreach ($detailedInfoGroup as $name):?>
+                <?php
+                    $html = $layout->renderElement($name);
+                    if (!trim($html)) {
+                        continue;
+                    }
+                    $alias = $layout->getElementAlias($name);
+                    $label = $block->getChildData($alias, 'title');
+                ?>
+                <div class="accordion" data-accordion="data-accordion"
+                     aria-labeledby="tab-label-<?= /* @escapeNotVerified */ $alias ?>-title"
+                     data-role="collapsible" id="tab-label-<?= /* @escapeNotVerified */ $alias ?>">
+                    <div class="accordion-title" data-control="data-control">
+                        <h4><?= /* @escapeNotVerified */ $label ?></h4>
+                    </div>
+                    <div class="accordion-content animated" data-content="data-content">
+                        <?= /* @escapeNotVerified */ $html ?>
+                    </div>
+                </div>
+            <?php endforeach;?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

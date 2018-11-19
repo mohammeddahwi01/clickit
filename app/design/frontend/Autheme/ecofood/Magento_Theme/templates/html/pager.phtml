@@ -1,0 +1,89 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Pager template
+ *
+ * @see \Magento\Theme\Block\Html\Pager
+ */
+?>
+<?php if ($block->getCollection()->getSize()): ?>
+    <?php if ($block->getLastPageNum()>1): ?>
+    <div class="pagination-widget-1">
+        <ul class="pagination-list" aria-labelledby="paging-label">
+        <?php if (!$block->isFirstPage()): ?>
+            <li class="prev">
+                <?php $text = $block->getAnchorTextForPrevious() ? $block->getAnchorTextForPrevious() : '';?>
+                <a href="<?= /* @escapeNotVerified */ $block->getPreviousPageUrl() ?>" title="<?= /* @escapeNotVerified */ $text ? $text : __('Previous') ?>">
+                    <i class="fa fa-angle-left"></i>
+                    <span><?= /* @escapeNotVerified */ $text ? $text : __('Previous') ?></span>
+                </a>
+            </li>
+        <?php endif;?>
+
+        <?php if ($block->canShowFirst()): ?>
+            <li class="item">
+                <a class="page first" href="<?= /* @escapeNotVerified */ $block->getFirstPageUrl() ?>">
+                    <span>1</span>
+                </a>
+            </li>
+        <?php endif;?>
+
+        <?php if ($block->canShowPreviousJump()): ?>
+            <li class="item">
+                <a class="page previous jump" title="" href="<?= /* @escapeNotVerified */ $block->getPreviousJumpUrl() ?>">
+                    <span>...</span>
+                </a>
+            </li>
+        <?php endif;?>
+
+        <?php foreach ($block->getFramePages() as $_page): ?>
+            <?php if ($block->isPageCurrent($_page)): ?>
+                <li class="item active">
+                    <a><span><?= /* @escapeNotVerified */ $_page ?></span></a>
+                </li>
+            <?php else: ?>
+                <li class="item">
+                    <a href="<?= /* @escapeNotVerified */ $block->getPageUrl($_page) ?>">
+                        <span><?= /* @escapeNotVerified */ $_page ?></span>
+                    </a>
+                </li>
+            <?php endif;?>
+        <?php endforeach;?>
+
+        <?php if ($block->canShowNextJump()): ?>
+            <li class="item">
+                <a class="page next jump" title="" href="<?= /* @escapeNotVerified */ $block->getNextJumpUrl() ?>">
+                    <span>...</span>
+                </a>
+            </li>
+        <?php endif;?>
+
+        <?php if ($block->canShowLast()): ?>
+          <li class="item">
+              <a class="page last" href="<?= /* @escapeNotVerified */ $block->getLastPageUrl() ?>">
+                  <span><?= /* @escapeNotVerified */ $block->getLastPageNum() ?></span>
+              </a>
+          </li>
+        <?php endif;?>
+
+        <?php if (!$block->isLastPage()): ?>
+            <li class="next">
+                <?php $text = $block->getAnchorTextForNext() ? $block->getAnchorTextForNext() : '';?>
+                <a  href="<?= /* @escapeNotVerified */ $block->getNextPageUrl() ?>" title="<?= /* @escapeNotVerified */ $text ? $text : __('Next') ?>">
+                    <span><?= /* @escapeNotVerified */ $text ? $text : __('Next') ?></span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        <?php endif;?>
+        </ul>
+    </div>
+    <?php endif; ?>
+<?php endif ?>

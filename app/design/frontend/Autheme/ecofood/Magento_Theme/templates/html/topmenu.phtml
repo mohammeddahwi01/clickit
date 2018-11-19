@@ -1,0 +1,32 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+<?php
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $request = $objectManager->get('Magento\Framework\App\Action\Context')->getRequest();
+?>
+<nav class="navigation" data-action="navigation">
+    <?php if($request->getFullActionName() == 'cms_index_index'):
+            if ($block->getLayout()->getBlock('page.main.title')->getPageTitle() == 'Home Page'):
+                echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-nav1')->toHtml();
+            else:
+                echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-nav2-categories')->toHtml();
+            endif;
+          else:
+              echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('eco-nav2-categories')->toHtml();
+    endif;?>
+</nav>
+

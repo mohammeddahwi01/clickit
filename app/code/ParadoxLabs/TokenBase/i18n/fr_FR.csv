@@ -1,0 +1,96 @@
+Payment Data,Informations de paiement
+Name on Account,Nom au compte
+Bank Name,Nom de l'institution bancaire
+Account Number,Numéro de compte
+Credit Card Type,Type de carte de crédit
+Credit Card Number,Numéro de carte de crédit
+Transaction ID,Numéro de transaction
+Payment record deleted.,Enregistrement du paiement supprimé.
+Unable to load card for deletion.,Impossible d'entrer la carte pour supprimer
+Invalid Request.,Requête non valide
+An error occurred. Please try again.,Une erreur est survenue. Essayez de nouveau.
+Invalid card reference.,Référence de carte non valide.
+No payment methods are currently available.,Aucune méthode de paiement est disponible.
+My Payment Data,Mes informations de paiement
+Payment data saved successfully.,Informations de paiement sauvegardées avec succès.
+This credit card type is not allowed for this payment method.,Ce type de carte de crédit n'est pas autorisé comme mode de paiement.
+Invalid credit card number.,Numéro de carte non valide.
+Please enter a valid %1.,S.v.p. entrez un %1 valide.
+Invalid credit card expiration date.,Date d'expiration non valide.
+Please complete all required fields.,S.v.p. complétez tous les champs requis.
+Please limit your account name to 22 characters.,S.v.p. limitez votre nom de compte à 22 caractères.
+Your routing number must be 9 digits long. Please recheck the value you entered.,Votre numéro de transit et d'institution doit être de 9 caractères. S.v.p. vérifiez vos données.
+Your account number must be between 5 and 17 digits. Please recheck the value you entered.,Votre numéro de compte doit être entre 5 et 17 caractères. S.v.p. vérifiez vos données.
+Please enter your credit card %1.,S.v.p. entrez votre carte de crédit %1.
+Missing argument 'methodCode',Missing argument 'methodCode'
+Unable to load payment data. Please check the form and try again.,Impossible de capturer l'information de paiement. S.v.p. vérifier le formulaire et essayer de nouveau.
+Could not find billing address.,Impossible de trouver l'adresse de facturation.
+Invalid payment data provided. Please check the form and try again.,Information de paiement non valide. S.v.p. vérifier le formulaire et essayer de nouveau.
+%1 XXXX-%2,%1 XXXX-%2
+Merging duplicate payment data into card %1,Fusion d'information de paiement dupliquée dans la carte %1
+%1 class doesn't implement \ParadoxLabs\TokenBase\Api\Data\CardInterface,%1 class doesn't implement \ParadoxLabs\TokenBase\Api\Data\CardInterface
+[Array2XML] Illegal character in attribute name. attribute: %1 in node: %2,[Array2XML] Illegal character in attribute name. attribute: %1 in node: %2
+[XML2Array] Error parsing the XML string.,[XML2Array] Error parsing the XML string.
+[XML2Array] The input XML object should be of type DOMDocument.,[XML2Array] The input XML object should be of type DOMDocument.
+[Array2XML] Illegal character in tag name. tag: %1 in node: %2,[Array2XML] Illegal character in tag name. tag: %1 in node: %2
+%1 class doesn't implement \ParadoxLabs\TokenBase\Api\MethodInterface,%1 class doesn't implement \ParadoxLabs\TokenBase\Api\MethodInterface
+Invalid methodCode: '%1',Invalid methodCode: '%1'
+"Card with id ""%1"" does not exist.","La carte avec le numéro ""%1"" n'existe pas."
+Save info (do not authorize),Sauvegarder l'information (ne pas autoriser)
+Authorize,Autoriser
+Authorize and Capture,Autoriser et capturer
+%1 will be available after you've placed an order.,%1 sera disponible après que vous ayez placé une commande.
+%1 is currently unavailable. Please try again later.,%1 n'est pas disponible en ce moment. Essayez de nouveau plus tard.
+This payment record cannot be modified while associated with pending orders.,Ce paiement ne peut être modifié lorqu'il est associé au statut de commande Pending.
+Card In Use,Carte en utilisation
+Edit,Éditez
+Delete,Supprimez
+(Expires %1),(Expire %1)
+The customer does not have any payment data saved yet.,Le client n'a pas d'information de paiement sauvegardée.
+Editing %1,Editing %1
+Add A Bank Account (eCheck),Ajoutez un compte bancaire (eCheck)
+* Required Fields,* Champs requis
+Cardholder Information,Information du titulaire de la carte
+First Name,Prénom
+Last Name,Nom
+Company,Société
+Phone Number,Numéro de téléphone
+Cardholder Address,Adresse du titulaire
+Street,Rue
+Street Address,Adresse
+Street Address %1,Adresse %1
+City,Ville
+State/Province,État/Province
+"Please select a region, state or province.",S.v.p. sélectionner un État ou une Province.
+Zip/Postal Code,Zip/Code Postal
+Country,Pays
+Bank Information,Information bancaire
+Routing Number,Numéro de transit et d'institution
+Account Type,Type de compte
+Save,Sauvegarder
+Cancel,Supprimer
+Add A Credit Card,Ajoutez une carte de crédit
+Credit Card Information,Information de carte de crédit
+CC Type,Type de carte de crédit
+--Please Select--,--S.v.p. sélectionner--
+CC Number,Numéro de carte de crédit
+Expiration,Expiration
+CCV,CCV
+Card Verification Number,Numéro de vérification de carte
+There are currently no active TokenBase payment methods.,Il n’existe actuellement aucun moyen de paiement actif avec jeton.
+Add new card,Ajouter une nouvelle carte
+Save for next time,Sauvegarder pour la prochaine foi
+"For your convenience, this data will be stored securely by our payment processor.","Pour votre convenance, ces informations seront conservées sécuritairement par notre processeur de paiement."
+Please Select,S.v.p. sélectionner
+Expiration Date,Date d'expiration
+You do not have any payment data saved yet.,Vous n'avez pas d'information de paiement sauvegardée
+"On the bottom of your checks, you will see four groups of numbers. Usually the second one is your routing/institution number, and the third is your account number.",Au bas de vos chèques vous verrez 4 groupes de chiffres. Généralement le deuxième est le numéro de transit/institution et le troisième votre numéro de compte.
+Visual reference for locating routing number and account number on a check,Référence visuelle pour localiser le numéro de transit/institution et numéro de compte sur un chèque
+Where do I find these numbers?,Où trouver ces numéros?
+Card Verification Number Visual Reference,Référence visuelle du numéro de vérification de la carte
+What is this?,Qu'est-ce que c'est?
+Payment Information,Information de paiement 
+Are you sure you want to delete this?,Êtes-vous sûr de vouloir supprimer?
+Type,Type
+ParadoxLabs Payment Module Settings,ParadoxLabs Payment Module Settings
+Erase archived cards after 120 days,Erase archived cards after 120 days

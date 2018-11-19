@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+    <head >
+        <script>
+    var BASE_URL = 'http://coolid.ca/admin/admin/index/index/key/cb79d830c0f61802b27ad7f8ddfcf41bd67251674a5921133c1ae3787315cc2f/';
+    var FORM_KEY = 'SzwjSJR5MW2F7ui8';
+    var require = {
+        "baseUrl": "http://coolid.ca/pub/static/version1540433241/adminhtml/Magento/backend/en_CA"
+    };
+</script>
+        <meta charset="utf-8"/>
+<meta name="robots" content="NOINDEX,NOFOLLOW"/>
+<meta name="viewport" content="width=1024"/>
+<meta name="format-detection" content="telephone=no"/>
+<title>Magento Admin</title>
+<link  rel="stylesheet" type="text/css"  media="all" href="http://coolid.ca/pub/static/version1540433241/adminhtml/Magento/backend/en_CA/extjs/resources/css/ext-all.css" />
+<link  rel="stylesheet" type="text/css"  media="all" href="http://coolid.ca/pub/static/version1540433241/adminhtml/Magento/backend/en_CA/extjs/resources/css/ytheme-magento.css" />
+<link  rel="stylesheet" type="text/css"  media="all" href="http://coolid.ca/pub/static/version1540433241/adminhtml/Magento/backend/en_CA/Amasty_Base/css/main.css" />
+<link  rel="stylesheet" type="text/css"  media="all" href="http://coolid.ca/pub/static/version1540433241/adminhtml/Magento/backend/en_CA/Xtento_XtCore/css/base_admin.min.css" />
+<link  rel="stylesheet" type="text/css"  media="all" href="http://coolid.ca/pub/static/version1540433241/adminhtml/Magento/backend/en_CA/jquery/jstree/themes/default/style.css" />
+<link  rel="stylesheet" type="text/css"  media="all" href="http://coolid.ca/pub/static/version1540433241/adminhtml/Magento/backend/en_CA/css/styles.css" />
+<script  type="text/javascript"  src="http://coolid.ca/pub/static/version1540433241/adminhtml/Magento/backend/en_CA/requirejs/require.js"></script>
+<script  type="text/javascript"  src="http://coolid.ca/pub/static/version1540433241/adminhtml/Magento/backend/en_CA/mage/requirejs/mixins.js"></script>
+<script  type="text/javascript"  src="http://coolid.ca/pub/static/version1540433241/adminhtml/Magento/backend/en_CA/requirejs-config.js"></script>
+<link  rel="icon" type="image/x-icon" href="http://coolid.ca/pub/media/favicon/stores/1/favicon.ico" />
+<link  rel="shortcut icon" type="image/x-icon" href="http://coolid.ca/pub/media/favicon/stores/1/favicon.ico" />
+            </head>
+    <body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "http://coolid.ca/pub/static/version1540433241/adminhtml/Magento/backend/en_CA/images/loader-2.gif"}}' id="html-body" class="adminhtml-auth-login page-layout-admin-login">
+        <section class="page-wrapper">    <script>
+        require.config({
+            deps: [
+                'jquery',
+                'mage/translate',
+                'jquery/jquery-storageapi'
+            ],
+            callback: function ($) {
+                'use strict';
+
+                var dependencies = [],
+                    versionObj;
+
+                $.initNamespaceStorage('mage-translation-storage');
+                $.initNamespaceStorage('mage-translation-file-version');
+                versionObj = $.localStorage.get('mage-translation-file-version');
+
+                
+                if (versionObj.version !== 'b9944ba7200601b82e1a73e8a969648bedfd4ded') {
+                    dependencies.push(
+                        'text!js-translation.json'
+                    );
+
+                }
+
+                require.config({
+                    deps: dependencies,
+                    callback: function (string) {
+                        if (typeof string === 'string') {
+                            $.mage.translate.add(JSON.parse(string));
+                            $.localStorage.set('mage-translation-storage', string);
+                            $.localStorage.set(
+                                'mage-translation-file-version',
+                                {
+                                    version: 'b9944ba7200601b82e1a73e8a969648bedfd4ded'
+                                }
+                            );
+                        } else {
+                            $.mage.translate.add($.localStorage.get('mage-translation-storage'));
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+
+
+
+<script>
+require([
+    "jquery",
+    "jquery/ui"
+], function($){
+
+    $.extend(true, $, {
+        calendarConfig: {
+            dayNames: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+            dayNamesMin: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
+            monthNames: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+            monthNamesShort: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+            infoTitle: "About the calendar",
+            firstDay: 1,
+            closeText: "Close",
+            currentText: "Go Today",
+            prevText: "Previous",
+            nextText: "Next",
+            weekHeader: "WK",
+            timeText: "Time",
+            hourText: "Hour",
+            minuteText: "Minute",
+            dateFormat: $.datepicker.RFC_2822,
+            showOn: "button",
+            showAnim: "",
+            changeMonth: true,
+            changeYear: true,
+            buttonImageOnly: null,
+            buttonImage: null,
+            showButtonPanel: true,
+            showOtherMonths: true,
+            showWeek: false,
+            timeFormat: '',
+            showTime: false,
+            showHour: false,
+            showMinute: false,
+            serverTimezoneSeconds: 1540419498,
+            serverTimezoneOffset: -14400,
+            yearRange: '1918:2118'
+        }
+    });
+
+enUS = {"m":{"wide":["January","February","March","April","May","June","July","August","September","October","November","December"],"abbr":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]}}; // en_US locale reference
+
+});
+</script>
+<header class="login-header">                        <a
+            href="http://coolid.ca/admin/admin/"
+            data-edition="Community Edition"            class="logo">
+            <img class="logo-img" src="http://coolid.ca/pub/static/version1540433241/adminhtml/Magento/backend/en_CA/images/magento-logo.svg"
+            alt="Magento Admin Panel"/>
+        </a>
+    </header><div class="login-content">
+<form method="post" action="" id="login-form" data-mage-init='{"form": {}, "validation": {}}' autocomplete="off">
+    <fieldset class="admin__fieldset">
+        <legend class="admin__legend">
+            <span>Welcome, please sign in</span>
+        </legend><br/>
+        <input name="form_key" type="hidden" value="SzwjSJR5MW2F7ui8" />
+        <div class="admin__field _required field-username">
+            <label for="username" class="admin__field-label">
+                <span>Username</span>
+            </label>
+            <div class="admin__field-control">
+                <input id="username"
+                       class="admin__control-text"
+                       type="text"
+                       name="login[username]"
+                       autofocus
+                       value=""
+                       data-validate="{required:true}"
+                       placeholder="user name"
+                       autocomplete="off"
+                    />
+            </div>
+        </div>
+        <div class="admin__field _required field-password">
+            <label for="login" class="admin__field-label">
+                <span>Password</span>
+            </label>
+            <div class="admin__field-control">
+                <input id="login"
+                       class="admin__control-text"
+                       type="password"
+                       name="login[password]"
+                       data-validate="{required:true}"
+                       value=""
+                       placeholder="password"
+                       autocomplete="new-password"
+                    />
+            </div>
+        </div>
+                <div class="form-actions">
+            <div class="actions">
+    <button
+                class="action-login action-primary">
+        <span>Sign in</span>
+    </button>
+</div>
+<div class="links">
+<a class="action-forgotpassword" href="http://coolid.ca/admin/admin/auth/forgotpassword/">Forgot your password?</a>
+</div>
+        </div>
+    </fieldset>
+</form>
+</div><footer class="login-footer"><a class="link-copyright" href="https://magento.com" target="_blank" title="Magento"></a>
+Copyright &copy; 2018 Magento Commerce Inc. All rights reserved.</footer></section>    </body>
+</html>

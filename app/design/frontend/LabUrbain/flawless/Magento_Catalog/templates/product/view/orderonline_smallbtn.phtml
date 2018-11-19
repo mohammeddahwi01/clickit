@@ -1,0 +1,17 @@
+<?php
+$params_arr = array('product'=>7,'qty'=>1);
+$url = 'checkout/cart/add?';
+foreach($params_arr as $paramKey => $paramVal) $url_arr[] = $paramKey.'='.$paramVal;
+$url .= implode('&',$url_arr);
+?>
+<!-- <form action="<?php echo Mage::getUrl($url) ?>" method="post">
+ $objectManager->get('Magento\Checkout\Helper\Cart')->getAddUrl($product)
+<input type="hidden" name="product" value="1" />
+<input type="hidden" name="form_key" value="<?php //echo Mage::getSingleton('core/session')->getFormKey() ?>" /> //getting unique form key
+
+<fieldset class="add-to-cart-box">
+<input type="submit" title="<?php //echo $this->__('Add to Cart') ?>" class="addtocart" />
+</fieldset>
+</form> -->
+<?php echo $objectManager->get('Magento\Checkout\Helper\Cart')->getAddUrl($params_arr); ?>
+?>

@@ -1,0 +1,40 @@
+<?php
+
+// $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+// $product = $objectManager->get('Magento\Catalog\Model\Product')->load(5);
+// $listBlock = $objectManager->get('\Magento\Catalog\Block\Product\ListProduct');
+// $addToCartUrl =  $listBlock->getAddToCartUrl($product);
+
+?>
+<!-- <form action="<?php //echo Mage::getUrl($url) ?>" method="post">
+ $objectManager->get('Magento\Checkout\Helper\Cart')->getAddUrl($product)
+<input type="hidden" name="product" value="1" />
+<input type="hidden" name="form_key" value="<?php //echo Mage::getSingleton('core/session')->getFormKey() ?>" /> //getting unique form key
+
+<fieldset class="add-to-cart-box">
+<input type="submit" title="<?php //echo $this->__('Add to Cart') ?>" class="addtocart" />
+</fieldset>
+</form> -->
+
+<?php
+$om = \Magento\Framework\App\ObjectManager::getInstance();
+$productHelper = $om->get('\Magento\Catalog\Model\Product');
+$listBlock = $om->get('\Magento\Catalog\Block\Product\ListProduct');
+?>
+    <a href="" class="order-button">
+        <!-- <div class="order-button-text">Order online</div> -->
+				<form  data-role="tocart-form" action="<?php echo $listBlock->getAddToCartUrl($productHelper->load(7));
+				?>" method="post">      
+				<?php echo $block->getBlockHtml('formkey'); ?>
+				    <div class="qty-info" style="display:none;">
+				        <span class="add-qty button-qty">+</span>
+				        <span class="remove-qty button-qty">-</span>
+				        <input class="qty-product3d" oninput="this.value=this.value.replace(/[^0-9]/g,'');" type="hidden" value="1">
+				    </div>
+				        <button style="margin:0 auto;" class="action tocart primary order-button"
+				    type="submit" title="<?php /* @escapeNotVerified */ echo __('Order online') ?>">
+				        <span><?php /* @escapeNotVerified */ echo __('Order online') ?></span>
+				    </button>
+				</form>
+    </a>
+

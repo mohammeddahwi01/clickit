@@ -1,0 +1,49 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Customer\Block\Form\Login $block */
+?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-push-4">
+            <div class="register-1 login-1">
+                <form class="theme-form"
+                      action="<?= $block->escapeUrl($block->getPostActionUrl()) ?>"
+                      method="post"
+                      id="login-form"
+                      data-mage-init='{"validation":{}}'>
+                    <?= $block->getBlockHtml('formkey') ?>
+                    <input name="login[username]" value="<?= $block->escapeHtmlAttr($block->getUsername()) ?>" <?php if ($block->isAutocompleteDisabled()): ?> autocomplete="off"<?php endif; ?>
+                           id="email" type="email" class="theme-input-text" title="<?= $block->escapeHtmlAttr(__('Email')) ?>"
+                           data-validate="{required:true, 'validate-email':true}" placeholder="<?= $block->escapeHtml(__('User name')) ?>">
+                    <input name="login[password]" type="password" <?php if ($block->isAutocompleteDisabled()): ?> autocomplete="off"<?php endif; ?>
+                           class="theme-input-text" id="pass" title="<?= $block->escapeHtmlAttr(__('Password')) ?>"
+                           data-validate="{required:true}" placeholder="<?= $block->escapeHtml(__('Password')) ?>">
+                    <?= $block->getChildHtml('form_additional_info') ?>
+                    <div class="theme-checkbox">
+                        <div class="item theme-input-chk">
+                            <input type="checkbox" id="poly" />
+                            <label for="poly"></label>
+                            <span>Remember me</span>
+                        </div>
+                        <div class="item theme-input-chk">
+                            <input type="checkbox" id="email" />
+                            <label for="email"></label>
+                            <a href="<?= $block->escapeUrl($block->getForgotPasswordUrl()) ?>">
+                                <span><?= $block->escapeHtml(__('Forgot Your Password?')) ?></span>
+                            </a>
+                        </div>
+                    </div>
+                    <button type="submit" class="au-btn au-btn-border au-btn-radius btn-block btn-submit" name="send" id="send2">
+                        <span><?= $block->escapeHtml(__('LOG IN')) ?></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

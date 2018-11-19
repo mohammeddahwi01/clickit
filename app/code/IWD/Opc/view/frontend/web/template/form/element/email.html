@@ -1,0 +1,52 @@
+<!-- ko ifnot: isCustomerLoggedIn -->
+<!-- ko foreach: getRegion('before-login-form') -->
+<!-- ko template: getTemplate() --><!-- /ko -->
+<!-- /ko -->
+<div id="iwd_opc_login" class="fieldset checkout-method p-b-40">
+    <h4 class="checkout-heading">01 / Checkout method</h4>
+    <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer, please proceed to the Billing & Shipping section.</p>
+    <form
+            data-role="email-with-possible-login"
+            data-bind="submit:login, iwdBlockLoader: isLoading"
+            method="post">
+        <div class="iwd_opc_universal_wrapper input-row m-b-15">
+            <div class="input-col-5 p-r-5">
+                <input
+                        data-bind="
+                                attr:{
+                                    placeholder: placeholder,
+                                    title: placeholder
+                                },
+                                textInput: email,
+                                hasFocus: emailFocused"
+                        class="iwd_opc_input iwd_opc_field theme-input-text"
+                        type="email"
+                        name="username"
+                        data-validate="{required:true, 'validate-email':true}"/>
+            </div>
+            <input name="context" type="hidden" value="checkout"/>
+            <div class="input-col-5 p-r-5">
+                <input
+                        data-bind="attr:{
+                                    'type': passwordType,
+                                    placeholder: passwordPlaceholder,
+                                    title: passwordPlaceholder,
+                                },
+                                hasFocus: passwordFocused"
+                        class="iwd_opc_input iwd_opc_field theme-input-text"
+                        name="password"
+                        data-validate="{required:true}"
+                        autocomplete="off"/>
+            </div>
+
+        </div>
+
+        <button
+                data-bind="i18n: 'Log In', attr:{title:$t('Log In')}"
+                type="submit" id="iwd_opc_login_button" class="au-btn au-btn-radius au-btn-border">
+        </button>
+        <a class="m-t-15" href="#">Lost your password?</a>
+    </form>
+</div>
+<!-- /ko -->
+

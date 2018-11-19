@@ -1,0 +1,22 @@
+<!-- ko if: isDisplayed() -->
+    <!-- ko if: isTaxDisplayedInGrandTotal -->
+    <tr>
+        <td data-bind="i18n: inclTaxLabel"></td>
+        <td><!-- ko text: getValue() --><!-- /ko --></td>
+    </tr>
+    <!-- /ko -->
+
+    <!-- ko if: !isTaxDisplayedInGrandTotal -->
+    <tr>
+        <td data-bind="i18n: title"></td>
+        <td><!-- ko text: getValue() --><!-- /ko --></td>
+    </tr>
+    <!-- /ko -->
+
+    <!-- ko if: isBaseGrandTotalDisplayNeeded() -->
+    <tr>
+        <td data-bind="i18n: basicCurrencyMessage"></td>
+        <td><!-- ko text: getBaseValue() --><!-- /ko --></td>
+    </tr>
+    <!-- /ko -->
+<!-- /ko -->

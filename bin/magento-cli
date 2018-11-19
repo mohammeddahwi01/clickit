@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Check the user before running the command
+if [ `id | sed -e s/uid=//g -e s/\(.*//g` -eq 0 ]; then
+    # Run the Magento's commands using the web servers' user and group
+    su daemon -s /bin/bash -c "/opt/bitnami/php/bin/php /opt/bitnami/apps/magento/htdocs/bin/magento $*"
+else
+    /opt/bitnami/php/bin/php /opt/bitnami/apps/magento/htdocs/bin/magento $*
+fi
+

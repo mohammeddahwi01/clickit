@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>  
+<bannerslider>
+<records>
+	<record> 
+		<name>Collection</name>
+		<title1>Lamps light Color</title1>
+		<title2></title2>
+		<click_url>#</click_url> 
+		<image><![CDATA[Plazathemes/bannerslider/images/b/a/banner1_home1.jpg]]></image>
+		<image_alt><![CDATA[Plazathemes/bannerslider/images/b/a/banner1_home1.jpg]]></image_alt>
+		<description>Eikon is made of certified wood and a lampshade that is attached 
+simply with the help of magnets.</description>
+		<order>1</order>
+		<store_id>1</store_id> 
+		<status>1</status> 
+	</record>
+	<record> 
+		<name>inimalist design </name>
+		<title1>Lounge Chairs</title1>
+		<title2></title2>
+		<click_url>#</click_url>
+		<image><![CDATA[Plazathemes/bannerslider/images/b/a/banner2_home1.jpg]]></image>
+		<image_alt><![CDATA[Plazathemes/bannerslider/images/b/a/banner2_home1.jpg]]></image_alt>
+		<description>Doko Demo is a minimalist design created by Copenhagen-based
+designer CZYK</description>
+		<order>1</order>
+		<store_id>1</store_id> 
+		<status>1</status> 
+	</record>
+	
+	
+</records>
+</bannerslider>

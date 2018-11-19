@@ -1,0 +1,43 @@
+<?php
+$objectManager  = \Magento\Framework\App\ObjectManager::getInstance();
+$categoryHelper = $objectManager->get('\Magento\Catalog\Helper\Category');
+$categories     = $categoryHelper->getStoreCategories();
+foreach ($categories as $category):
+    $categoriesStore[] = $category->getId();
+endforeach;
+
+$currentCategory = $objectManager->get('Magento\Framework\Registry')->registry('current_category');
+$categoriesStore = array_diff($categoriesStore, [$currentCategory->getId()]);
+
+$categoryCollection = $objectManager->get('\Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
+$categories         = $categoryCollection->create()->addAttributeToSelect('*');
+?>
+
+<div class="col-md-9">
+    <div class="m-t-50"></div>
+    <div class="row">
+        <?php foreach ($categories as $category):?>
+            <?php if(in_array($category->getId(), $categoriesStore)):?>
+                <div class="col-md-4 col-sm-6">
+                    <!-- .product-2-->
+                    <div class="product-1 product-2">
+                        <div class="product-image">
+                            <div class="image-holder">
+                                <a href="<?php echo $category->getUrl();?>">
+                                    <img src="<?php echo $category->getImageUrl();?>" alt="<?php echo $category->getName(); ?>" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title">
+                                <a class="name" href="#"><?php echo $category->getName(); ?></a>
+                            </h3>
+                            <p class="price totals"><?php echo $category->getProductCount().__('+ products');?></p>
+                        </div>
+                    </div>
+                    <!-- end .product-2-->
+                </div>
+            <?php endif;?>
+        <?php endforeach;?>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var $helper \Magento\Search\Helper\Data */
+$helper = $this->helper('Magento\Search\Helper\Data');
+?>
+<div class="search-widget-1">
+    <form class="form minisearch search-form" id="search_mini_form" action="<?= /* @escapeNotVerified */ $helper->getResultUrl() ?>" method="get">
+        <input id="search"
+               data-mage-init='{"quickSearch":{
+                    "formSelector":"#search_mini_form",
+                    "url":"<?= /* @escapeNotVerified */ $block->getUrl('search/ajax/suggest', ['_secure' => $block->getRequest()->isSecure()]) ?>",
+                    "destinationSelector":"#search_autocomplete"}
+               }'
+               type="text"
+               name="<?= /* @escapeNotVerified */ $helper->getQueryParamName() ?>"
+               value="<?= /* @escapeNotVerified */ $helper->getEscapedQueryText() ?>"
+               placeholder="<?= /* @escapeNotVerified */ __('Search products...') ?>"
+               class="input-text"
+               maxlength="<?= /* @escapeNotVerified */ $helper->getMaxQueryLength() ?>"
+               role="combobox"
+               aria-haspopup="false"
+               aria-autocomplete="both"
+               autocomplete="off"/>
+        <span class="underline"></span>
+        <button type="submit"
+            title="<?= $block->escapeHtml(__('Search')) ?>"
+            class="input-submit fa fa-search">
+        </button>
+    </form>
+</div>

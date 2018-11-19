@@ -1,0 +1,253 @@
+ <?php 
+	$columnsLimit = $block->getColumnsLimit() ?: 0;
+	$_menu = $block->getHtml('level-top', 'submenu', $columnsLimit);
+
+	$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();        
+ 
+ ?>
+
+
+<div class="column-left-container">
+    <a href="#" class="column-left-logo hidden">
+        <img src="<?php echo $block->getViewFileUrl('images/logo-essiac-with-flag.png') ?>" style="max-width:200px" alt="Logo Essiac" class="img-responsive" />
+    </a>
+
+    <div class="column-left-order-by-phone hidden">
+        <div class="column-left-order-by-phone-title"><img src="<?php echo $block->getViewFileUrl('images/call-answer-white.png') ?>" alt="phone icon" s />CALL US NOW</div>
+        <div class="column-left-order-by-phone-content">
+            <div><span class="phone">1-888-900-2299</span></div>
+            <div class="hidden">International <span class="phone">1 (514) 695-2299</span></div>
+        </div>
+    </div>
+
+    <div class="column-left-order-online hidden">
+        <a href="#" class="column-left-order-online-title">SHOP HERE</a>
+        <div class="column-left-order-online-content">
+            <a href="#" class="currency">$ CAN</a>
+            <a href="#" class="currency">$ USA</a>
+            <a href="#" class="currency">$ INTL</a>
+            <a href="#" class="currency">€ EUR</a>
+        </div>
+    </div>
+
+    <ul class="column-left-menu">
+				
+		        <li><a href="<?php echo $block->getBaseUrl(); ?>">HOME</a></li>
+		        <li><a href="<?php echo $block->getBaseUrl(); ?>essiac-products">ESSIAC® <span class="weight-400">PRODUCTS</span></a>
+		            <ul class="column-left-sous-menu">
+									<?php
+									$categoryFactory = $objectManager->get('\Magento\Catalog\Model\CategoryFactory');
+									$categoryId = 11; // YOUR CATEGORY ID
+									$category = $categoryFactory->create()->load($categoryId);
+ 
+									$categoryProducts = $category->getProductCollection()
+									                             ->addAttributeToSelect('*');
+                             
+									foreach ($categoryProducts as $product) {
+									    //print_r($product->getData());
+									    // printing category name and url
+											echo "<li><a href=".$product->getProductUrl().">".str_replace(","," ",$product->getName())."</a></li>";
+									}
+									
+									?>
+		            </ul>
+		        </li>
+		        <li><a href="<?php echo $block->getBaseUrl(); ?>tru-pine-products">TRU-PINE® <span class="weight-400">PRODUCTS</span></a>
+		            <ul class="column-left-sous-menu">
+									<?php
+									$categoryFactory = $objectManager->get('\Magento\Catalog\Model\CategoryFactory');
+									$categoryId = 12; // YOUR CATEGORY ID
+									$category = $categoryFactory->create()->load($categoryId);
+ 
+									$categoryProducts = $category->getProductCollection()
+									                             ->addAttributeToSelect('*');
+                             
+									foreach ($categoryProducts as $product) {
+									    //print_r($product->getData());
+									    // printing category name and url
+											echo "<li><a href=".$product->getProductUrl().">".str_replace(","," ",$product->getName())."</a></li>";
+									}
+									
+									?>
+		            </ul>    
+		        </li>
+		        <li><a href="<?php echo $block->getBaseUrl(); ?>naka-products">NAKA <span class="weight-400">PRODUCTS</span></a>
+		            <ul class="column-left-sous-menu">
+									<?php
+									$categoryFactory = $objectManager->get('\Magento\Catalog\Model\CategoryFactory');
+									$categoryId = 13; // YOUR CATEGORY ID
+									$category = $categoryFactory->create()->load($categoryId);
+ 
+									$categoryProducts = $category->getProductCollection()
+									                             ->addAttributeToSelect('*');
+                             
+									foreach ($categoryProducts as $product) {
+									    //print_r($product->getData());
+									    // printing category name and url
+											echo "<li><a href=".$product->getProductUrl().">".str_replace(","," ",$product->getName())."</a></li>";
+									}
+									
+									?>
+		            </ul>
+		        </li>
+		        <li><a href="<?php echo $block->getBaseUrl(); ?>contact-us">CONTACT US</a></li>
+		        <li><a href="#">ESSIAC® CORPORATE PROFILE</a>
+		            <ul class="column-left-sous-menu">
+		                <li><a href="<?php echo $block->getBaseUrl(); ?>canadian-success-story-en">Canadian Success story</a></li>
+		                <li><a href="<?php echo $block->getBaseUrl(); ?>ccnm-new-release-en">CCNM New Release</a></li>
+		                <li><a href="<?php echo $block->getBaseUrl(); ?>caisse-memorial-theater">Caisse Memorial Theater</a></li>
+		                <li><a href="<?php echo $block->getBaseUrl(); ?>distributor-inquiries-welcomed-en">Distributor Inquiries Welcomed</a></li>
+		            </ul>
+		        </li>
+		        <li><span class="no-link">GENERAL INFORMATION</span>
+		            <ul class="column-left-sous-menu">
+		                <li><a href="<?php echo $block->getBaseUrl(); ?>essiac-herbs">Essiac Herbs</a></li>
+		                <li><a href="<?php echo $block->getBaseUrl(); ?>ask-a-question">Ask Us A Product Question</a></li>
+		                <li><a href="<?php echo $block->getBaseUrl(); ?>privacy-policy">Privacy Policy</a></li>
+		                <li><a href="<?php echo $block->getBaseUrl(); ?>returns">Returns</a></li>
+		            </ul>
+		        </li>
+		        <li><a href="<?php echo $block->getBaseUrl(); ?>retail">RETAIL AND DISTRIBUTOR INQUIRIES</a></li>
+        <!-- <?= /* @escapeNotVerified */ $_menu ?> -->
+        <!-- <?= /* @escapeNotVerified */ $block->getChildHtml(); ?> -->
+		<?php /* ?>
+        <li><a href="#">ESSIAC® <span class="weight-400">PRODUCTS</span></a>
+            <ul class="column-left-sous-menu">
+                <li><a class='active' href="#">ESSIAC® Capsules</a></li>
+                <li><a href="">ESSIAC® Extract</a></li>
+                <li><a href="">ESSIAC® Powder</a></li>
+                <li><a href="">ESSIAC® for Pets</a></li>
+            </ul>
+        </li>
+        <li><a href="#">TRU-PINE® <span class="weight-400">PRODUCTS</span></a>
+            <ul class="column-left-sous-menu">
+                <li><a href="">TRU-PINE® Capsules</a></li>
+                <li><a href="">TRU-PINE® Extract</a></li>
+                <li><a href="">TRU-PINE® for Pets</a></li>
+            </ul>    
+        </li>
+        <li><a href="#">NAKA <span class="weight-400">PRODUCTS</span></a>
+            <ul class="column-left-sous-menu">
+                <li><a href="">Vital Greens liquid</a></li>
+                <li><a href="">Nutri B12</a></li>
+                <li><a href="">Nutri-Flex liquid</a></li>
+                <li><a href="">Milk Thistle liquid</a></li>
+                <li><a href="">Nutri-Flex Supreme</a></li>
+                <li><a href="">Milk Thistle Formula Mariendistel</a></li>
+                <li><a href="">Silicea Gel</a></li>
+                <li><a href="">Iron Vital F Liquid</a></li>
+                <li><a href="">Iron Vital® F Tablets</a></li>
+            </ul>
+        </li>
+        <li><a href="">CONTACT US</a></li>
+        <li><a href="">ESSIAC® CORPORATE PROFILE</a>
+            <ul class="column-left-sous-menu">
+                <li><a href="">Canadian Success story</a></li>
+                <li><a href="">CCNM New Release</a></li>
+                <li><a href="">Caisse Memorial Theater</a></li>
+                <li><a href="">Distributor Inquiries Welcomed</a></li>
+            </ul>
+        </li>
+        <li><span class="no-link">GENERAL INFORMATION</span>
+            <ul class="column-left-sous-menu">
+                <li><a class='active' href="#">Essiac Herbs</a></li>
+                <li><a href="#">Ask Us A Product Question</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Returns</a></li>
+            </ul>
+        </li>
+        <li><a href="#">RETAIL AND DISTRIBUTOR INQUIRIES</a></li>
+		<?php */ ?>
+		
+    </ul>
+
+    <div class="column-left-mailing-list">
+        <div class="column-left-mailing-list-title"><i class="fa fa-envelope" aria-hidden="true"></i> Join our mailing list</div>
+        <form class="form-mailing-list">
+            <label class="sr-only" for="exampleInputEmail2">Email</label>
+            <input type="email" class="input-mailing-list" id="exampleInputEmail2" placeholder="Your email address here">
+            <button type="submit" class="btn-mailing-list">Subscribe</button>
+        </form>
+    </div>
+
+    <div class="column-left-social-media">
+        <div class="column-left-social-media-title">FOLLOW US ON !</div>
+        <a target="_blank" href="https://www.facebook.com/Altramedinc/" class="column-left-social-media-icon"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://twitter.com/essiaccanada" class="column-left-social-media-icon"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+</div>    
+
+	<script type="text/javascript" charset="utf-8">
+		jQuery(document).ready(function() {
+            // Mettre la ligne header contenant les drapeaux en fixe
+            jQuery(window).scroll(function() {    
+                var scroll = jQuery(window).scrollTop();
+
+                if (scroll >= 53) {
+                    jQuery(".fond-header-container-row-2").addClass("fixed");
+                    jQuery(".fond-header-container-row-3").addClass("fixed");
+					jQuery(".site-main-content").css("marginTop","137px");
+                } else {
+                    jQuery(".fond-header-container-row-2").removeClass("fixed");
+                    jQuery(".fond-header-container-row-3").removeClass("fixed");
+					jQuery(".site-main-content").css("marginTop","auto");
+                }
+            });
+                
+		});
+        // MENU FIXE LORSQUE L'ON DEPASSE LES X PX DE HAUTEUR
+            jQuery(window).scroll(function() {    
+                var scroll = jQuery(window).scrollTop();
+
+                if (scroll >= 53){
+                    jQuery(".column-left-container").addClass("fixe");
+                    jQuery(".column-left-container").removeClass("new-bottom");
+                } else {
+                    jQuery(".column-left-container").removeClass("fixe");
+                    jQuery(".column-left-container").removeClass("new-bottom");
+                } 
+            });
+        jQuery( function () {
+					
+					var charts = jQuery( "footer" );
+          
+    /* FUNCTIONS */
+     
+     
+			    // Return boolean when an element is visible on screen
+			    function isVisible ( element ) {
+			        var
+			            viewPortHeight = jQuery( window ).height(), // Viewport Height
+			            scrollTop = jQuery( window ).scrollTop(), // Scroll Top
+			            currElementPosY = jQuery( element ).offset().top,
+			            elementHeight = jQuery( element ).height();
+         
+			        return ( currElementPosY + elementHeight > scrollTop && currElementPosY < ( viewPortHeight + scrollTop ) )
+			    }
+     
+			    // Animate chart only when you see it
+			    function animateChartWhenVisible ( chart ) {
+			        for ( var i = 0, count = chart.length; i < count; i++ ) {
+			            if ( isVisible( chart[ i ] )  ) {
+			                jQuery(".column-left-container").removeClass("fixe");
+			                jQuery(".column-left-container").addClass("bottom");
+			            }
+			            else {
+			                jQuery(".column-left-container").removeClass("bottom");
+                
+			            }
+			        }
+			    }
+     
+			    /* FUNCTIONS END */
+     
+			    // On scroll
+			    jQuery( window ).scroll( function () { 
+			        animateChartWhenVisible( charts );
+			    } );
+     
+			    /* On load */   
+			    animateChartWhenVisible( charts );
+          
+} );
+	</script>

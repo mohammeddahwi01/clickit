@@ -1,0 +1,444 @@
+<?xml version="1.0"?>
+<artfurniture>
+    <blocks>
+	
+		<block>
+            <title>Contact us</title>
+            <identifier>contact_us</identifier>
+            <content>
+                    <![CDATA[
+						<div class="contact-us"><iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6305.678625317825!2d-122.39957047637722!3d37.793805380191266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858063d63a0215%3A0xcba0af2dfe02048f!2s101+California+Street%2C+San+Francisco%2C+CA+94111%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1419099932976" width="100%" height="350"></iframe></div>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		<block>
+            <title>Welcome</title>
+            <identifier>welcome</identifier>
+            <content>
+                    <![CDATA[
+						<div class="Welcome">
+							Welcome you to ArtFurniture store!
+						</div>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>email</title>
+            <identifier>email</identifier>
+            <content>
+                    <![CDATA[
+						<div class="email"><span>Email: Contact@Plazathemes.com</span></div>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>Menu Links</title>
+            <identifier>pt_menu_links</identifier>
+            <content>
+                    <![CDATA[
+						<div class="pt_menu_link pt_menu">
+						<div class="parentMenu">
+						<ul class="mobilemenu">
+						<li><a href="{{store url="blog"}}">Blog</a></li>
+						<li><a class="us" href="{{store url="contact"}}">Contact Us</a></li>
+						</ul>
+						</div>
+						</div>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>static1 home</title>
+            <identifier>static1_home</identifier>
+            <content>
+                    <![CDATA[
+						<div class="static1_home1">
+						<div class="row">
+						<div class="col-md-3 col-sm-3 col-xs-12 box1">
+						<div class="box-col"><a href="{{store direct_url="bedroom/beds.html"}}"><img src="{{media url="wysiwyg/img1_home1.jpg"}}" alt="" /></a></div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 box2">
+						<div class="box-col"><a href="{{store direct_url="bedroom/beds.html"}}"><img src="{{media url="wysiwyg/img2_home1.jpg"}}" alt="" /></a></div>
+						</div>
+						<div class="col-md-3 col-sm-3 col-xs-12 box3">
+						<div class="box-col"><a href="{{store direct_url="bedroom/nightstands.html"}}"><img src="{{media url="wysiwyg/img3_home1.jpg"}}" alt="" /></a></div>
+						</div>
+						</div>
+						</div>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>static categor1 home1</title>
+            <identifier>static_categor1_home1</identifier>
+            <content>
+                    <![CDATA[
+						<p>{{widget type="Plazathemes\Categorytab\Block\CateWidget" title="new shop item" identify="new_shop_item" category_id="82" items_default="5" items_desktop="4" items_desktop_small="3" items_tablet="2" items_mobile="1" show_addtocart="1" show_wishlist="1" show_compare="1" row_show="1" template="categorytab/grid.phtml"}}</p>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>static2 home1</title>
+            <identifier>static2_home1</identifier>
+            <content>
+                    <![CDATA[
+						<div class="static2_home1">
+						<div class="row">
+						<div class="col-md-3 col-sm-3 col-xs-12 box1">
+						<div class="bos">
+						<div class="bos-top">
+						<div class="iner-box">
+						<div class="img"><img src="{{media url="wysiwyg/img1_static2.jpg"}}" alt="" /></div>
+						<div class="text">
+						<h2>CHair collection</h2>
+						</div>
+						</div>
+						</div>
+						<div class="bos-bottom">
+						<div class="iner-box">
+						<div class="img"><img src="{{media url="wysiwyg/img2_static2.jpg"}}" alt="" /></div>
+						<div class="text">
+						<h2>sofa collection</h2>
+						</div>
+						</div>
+						</div>
+						</div>
+						</div>
+						<div class="col-md-3 col-sm-3 col-xs-12 box2">
+						<div class="iner-box">
+						<div class="img"><img src="{{media url="wysiwyg/img3_static2.jpg"}}" alt="" /></div>
+						<div class="text">
+						<h2>lighting collection</h2>
+						</div>
+						</div>
+						</div>
+						<div class="col-md-3 col-sm-3 col-xs-12 box3">
+						<div class="bos">
+						<div class="bos-top">
+						<div class="iner-box">
+						<div class="img"><img src="{{media url="wysiwyg/img4_static2.jpg"}}" alt="" /></div>
+						<div class="text">
+						<h2>HOME ACCESSORIES</h2>
+						</div>
+						</div>
+						</div>
+						<div class="bos-bottom">
+						<div class="iner-box">
+						<div class="img"><img src="{{media url="wysiwyg/img5_static2.jpg"}}" alt="" /></div>
+						<div class="text">
+						<h2>COFFEE &amp; SIDE TABLES</h2>
+						</div>
+						</div>
+						</div>
+						</div>
+						</div>
+						<div class="col-md-3 col-sm-3 col-xs-12 box4">
+						<div class="iner-box">
+						<div class="img"><img src="{{media url="wysiwyg/img6_static2.jpg"}}" alt="" /></div>
+						<div class="text">
+						<h2>Black Hanging Chair</h2>
+						</div>
+						</div>
+						</div>
+						</div>
+						</div>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>static3 home</title>
+            <identifier>static3_home</identifier>
+            <content>
+                    <![CDATA[
+						<div class="static3_home1">
+						<div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-12 box1">
+						<div class="box-col"><a href="{{store direct_url="bedroom/beds.html"}}"><img src="{{media url="wysiwyg/img1_Static3.jpg"}}" alt="" /></a></div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-12 box2">
+						<div class="box-col"><a href="{{store direct_url="bedroom/beds.html"}}"><img src="{{media url="wysiwyg/img2_Static3.jpg"}}" alt="" /></a></div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-12 box3">
+						<div class="box-col"><a href="{{store direct_url="bedroom/beds.html"}}"><img src="{{media url="wysiwyg/img3_Static3.jpg"}}" alt="" /></a></div>
+						</div>
+						</div>
+						</div>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		<block>
+            <title>static4 home</title>
+            <identifier>static4_home</identifier>
+            <content>
+                    <![CDATA[
+						<div class="static4_home1">
+						<div class="row">
+						<div class="col-md-3 col-sm-3 col-xs-12 box1">
+						<div class="iner-box">
+						<div class="icon"><span>free</span></div>
+						<div class="text">
+						<h2>free shipping</h2>
+						<p>Free shipping on all US order</p>
+						</div>
+						</div>
+						</div>
+						<div class="col-md-3 col-sm-3 col-xs-12 box2">
+						<div class="iner-box">
+						<div class="icon"><span>online</span></div>
+						<div class="text">
+						<h2>Online Support 24/7</h2>
+						<p>Support online 24 hours a day</p>
+						</div>
+						</div>
+						</div>
+						<div class="col-md-3 col-sm-3 col-xs-12 box3">
+						<div class="iner-box">
+						<div class="icon"><span>Money</span></div>
+						<div class="text">
+						<h2>Money Return</h2>
+						<p>Back guarantee under 7 days</p>
+						</div>
+						</div>
+						</div>
+						<div class="col-md-3 col-sm-3 col-xs-12 box4">
+						<div class="iner-box">
+						<div class="icon"><span>Member</span></div>
+						<div class="text">
+						<h2>Member Discount</h2>
+						<p>Onevery order over $120.00</p>
+						</div>
+						</div>
+						</div>
+						</div>
+						</div>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>footer static</title>
+            <identifier>footer_static</identifier>
+            <content>
+                    <![CDATA[
+						<div class="footer-static row">
+						<div class="col-sm-3 col-xs">
+						<div class="footer-static-title f-title1">
+						<div class="logo-footer"><a href="#"><img src="{{media url="wysiwyg/logo_footer.png"}}" alt="" /></a></div>
+						</div>
+						<div class="footer-static-content">
+						<ul class="adress">
+						<li><span>Addresss:</span> No 40 - Baria Sreet 133/2, USA.</li>
+						<li><span>Phone 01:</span> +(800) 123 456 78</li>
+						<li><span>Phone 02:</span> +(100) 123 456 789</li>
+						<li><span>Fax :</span> (800) 123 456 789</li>
+						<li><span>Email:</span>Contact@Plazathemes.com</li>
+						</ul>
+						</div>
+						</div>
+						<div class="col-sm-2 col-xs">
+						<div class="footer-static-title f-title2">
+						<h3>ABOUT US</h3>
+						</div>
+						<div class="footer-static-content">
+						<ul>
+						<li class="first"><a href="#">Site Map</a></li>
+						<li><a href="#">Specials</a></li>
+						<li><a href="{{store direct_url="customer/account/"}}">Delivery Information</a></li>
+						<li><a href="{{store direct_url="sales/order/history/"}}">Order History</a></li>
+						<li class="last"><a href="#">Privacy Policy</a></li>
+						</ul>
+						</div>
+						</div>
+						<div class="col-sm-2 col-xs">
+						<div class="footer-static-title f-title4">
+						<h3>OUR INFORMATION</h3>
+						</div>
+						<div class="footer-static-content">
+						<ul>
+						<li class="first"><a href="#">My Account</a></li>
+						<li><a href="#">Gift Cards</a></li>
+						<li><a href="#">Return Policy</a></li>
+						<li><a href="#">Your Orders</a></li>
+						<li class="last"><a href="#">Subway</a></li>
+						</ul>
+						</div>
+						</div>
+						<div class="col-sm-2 col-xs">
+						<div class="footer-static-title f-title3">
+						<h3>My Account</h3>
+						</div>
+						<div class="footer-static-content">
+						<ul>
+						<li class="first"><a href="#">My Account</a></li>
+						<li><a href="{{store direct_url="checkout/onepage"}}">Checkout</a></li>
+						<li><a href="{{store direct_url="customer/account/login/"}}">Login</a></li>
+						<li><a href="#">Order status</a></li>
+						<li class="last"><a href="#">Site Map</a></li>
+						</ul>
+						</div>
+						</div>
+						<div class="col-sm-3 col-xs">
+						<div class="footer-static-title f-title5">
+						<h3>sign up newsletter</h3>
+						</div>
+						<div class="footer-static-content">
+						<div class="new-static">{{block class="Magento\Newsletter\Block\Subscribe" name="instagramgallery" template="Magento_Newsletter::subscribe.phtml"}}</div>
+						</div>
+						</div>
+						</div>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>static bottom</title>
+            <identifier>static_bottom</identifier>
+            <content>
+                    <![CDATA[
+						<ul class="link-follow-foter">
+						<li class="first"><a class="twitter fa fa-twitter" title="Twitter" href="https://twitter.com/plazathemes"><span>twitter</span></a></li>
+						<li><a class="google fa fa-google-plus" title="Google" href="#"><span>google </span></a></li>
+						<li><a class="facebook fa fa-facebook" title="Facebook" href="https://www.facebook.com/plazathemes1"><span>facebook</span></a></li>
+						<li><a class="youtube fa fa-youtube" title="Youtube" href="https://www.youtube.com/user/plazathemes"><span>youtube </span></a></li>
+						</ul>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>footer payment</title>
+            <identifier>footer_payment</identifier>
+            <content>
+                    <![CDATA[
+						<p><img src="{{media url="wysiwyg/vira.png"}}" alt="" /></p>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>banner feft</title>
+            <identifier>banner_left</identifier>
+            <content>
+                    <![CDATA[
+						<div class="banner_left">
+						<div class="box-col"><a href="{{store direct_url="bedroom/beds.html"}}"><img src="{{media url="wysiwyg/left_banner.jpg"}}" alt="" /> </a></div>
+						</div>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>static1 home2</title>
+            <identifier>static1_home2</identifier>
+            <content>
+                    <![CDATA[
+						<div class="static1_home2">
+						<div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-12 box1">
+						<div class="box-col"><a href="{{store direct_url="bedroom/beds.html"}}"><img src="{{media url="wysiwyg/img1_home2.jpg"}}" alt="" /></a></div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-12 box2">
+						<div class="box-col"><a href="{{store direct_url="living-room/living-chairs.html"}}"><img src="{{media url="wysiwyg/img2_home2.jpg"}}" alt="" /></a></div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-12 box3">
+						<div class="box-col"><a href="{{store direct_url="dining-room/dining-sets.html"}}"><img src="{{media url="wysiwyg/img3_home2.jpg"}}" alt="" /></a></div>
+						</div>
+						</div>
+						</div>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>static categor1 home2</title>
+            <identifier>static_categor1_home2</identifier>
+            <content>
+                    <![CDATA[
+						<p>{{widget type="Plazathemes\Categorytab\Block\CateWidget" title="new shop item" identify="new_shop_item" category_id="82" items_default="4" items_desktop="4" items_desktop_small="3" items_tablet="2" items_mobile="1" show_addtocart="1" show_wishlist="1" show_compare="1" row_show="1" template="categorytab/grid.phtml"}}</p>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>Menu Links</title>
+            <identifier>pt_menu_links2</identifier>
+            <content>
+                    <![CDATA[
+						<div class="pt_menu_link pt_menu">
+						<div class="parentMenu">
+						<ul class="mobilemenu">
+						<li><a href="{{store url="contact"}}">Contact Us</a></li>
+						</ul>
+						</div>
+						</div>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>static categor1 home3</title>
+            <identifier>static_categor1_home3</identifier>
+            <content>
+                    <![CDATA[
+						<p>{{widget type="Plazathemes\Categorytab\Block\CateWidget" title="new shop item" identify="new_shop_item" category_id="82" items_default="5" items_desktop="4" items_desktop_small="3" items_tablet="2" items_mobile="1" show_addtocart="1" show_wishlist="1" show_compare="1" row_show="1" template="categorytab/grid.phtml"}}</p>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>static1 home4</title>
+            <identifier>static1_home4</identifier>
+            <content>
+                    <![CDATA[
+						<div class="static1_home4">
+						<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12 box2">
+						<div class="box-col"><a href="{{store direct_url="living-room/living-chairs.html"}}"><img src="{{media url="wysiwyg/img1_home4.jpg"}}" alt="" /></a></div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 box1">
+						<div class="box-col"><a href="{{store direct_url="bedroom/beds.html"}}"><img src="{{media url="wysiwyg/img2_home4.jpg"}}" alt="" /></a></div>
+						</div>
+						</div>
+						</div>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		<block>
+            <title>static categor1 home4</title>
+            <identifier>static_categor1_home4</identifier>
+            <content>
+                    <![CDATA[
+						<p>{{widget type="Plazathemes\Categorytab\Block\CateWidget" title="new shop item" identify="new_shop_item" category_id="81,82,83,99,100" items_default="4" items_desktop="4" items_desktop_small="3" items_tablet="2" items_mobile="1" show_addtocart="1" show_wishlist="1" show_compare="1" row_show="1" template="categorytab/grid.phtml"}}</p>
+					]]>
+            </content>
+            <is_active>1</is_active>
+        </block>
+		
+		
+	</blocks>
+</artfurniture>
